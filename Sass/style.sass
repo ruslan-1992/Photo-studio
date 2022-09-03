@@ -1,0 +1,530 @@
+*
+    margin: 0
+    padding: 0
+%items_buttons
+    background-image: url('/img/icon/circle.svg')
+    background-repeat: no-repeat
+    background-position: 5% 50%                     
+    padding: 0 12px 0 0
+    display: grid
+    justify-content: end
+    align-items: center
+    width: 130px
+    height: 42px
+    background-color: #FFFFFF
+    border-radius: 14px
+%full_screen_title_position
+    position: absolute
+    top: 43%
+    right: 5%
+    width: 22.7%
+%full_screen_title
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+    letter-spacing: 1px
+    color: #C0C0C0
+%font_line
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+%photo_icon
+    display: flex
+    position: absolute
+    bottom: 30px
+    right: 40px
+    list-style: none
+    color: rgba(255, 255, 255, 1)
+    font-weight: 400
+    font-size: 12px
+    line-height: 12px
+    min-height: 16px
+%photo_icon_li1
+    background-image: url('/img/icon/clock.svg')
+    background-repeat: no-repeat
+    padding-left: 20px
+%photo_icon_li2
+    background-image: url('/img/icon/camera.svg')
+    background-repeat: no-repeat
+    padding-left: 20px
+%photo_icon_li3
+    background-image: url('/img/icon/iso.svg')
+    background-repeat: no-repeat
+    padding-left: 37px
+%photo_icon_li4
+    background-image: url('/img/icon/Location-icon-Light.svg')
+    background-repeat: no-repeat
+    padding-left: 15px
+body
+    font-family: 'Poppins'
+.wrapper
+    display: grid
+    height: 100%
+    width: 100%
+    grid-template-rows: auto auto 1fr auto
+    grid-template-columns: 1fr
+    grid-template-areas: 'nav' 'header' 'main' 'footer'
+    nav
+        grid-area: nav
+        display: grid
+        grid-template: minmax(80px, auto) / 1fr minmax(auto, 130px) minmax(auto, 1070px) 1fr
+        background-color: rgba(24, 24, 24, 0.8)
+        justify-items: end
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 20
+        min-width: 100%
+        .logo
+            grid-column: 2/3
+            display: grid
+            align-items: center
+        ul
+            grid-column: 3/4
+            display: grid
+            grid-auto-flow: column
+            align-items: center
+            grid-column-gap: 50px
+            justify-items: center
+            list-style: none
+            .menu
+                font-size: 13px
+                text-decoration: none
+                color: rgba(255, 255, 255, 1)
+                &:hover
+                    border-bottom: 2px solid white
+                    padding-bottom: 5px
+                    transition: 0.3s
+
+            a
+                text-decoration: none
+                .nav-button
+                    display: grid
+                    align-items: center
+                    justify-items: center
+                    background: #FFFFFF
+                    border-radius: 14px
+                    color: #000000
+                    width: 155px
+                    height: 42px
+                    font-size: 15px
+                    &:hover
+                        background:#997a7a
+                        color: #fff
+                        transition: 0.5s
+    header
+        grid-area: header
+        display: flex
+        justify-content: center
+        align-items: end
+        background-image: url('/img/IMAGE header.jpg')
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: 50%
+        width: 100%
+        min-height: 716px
+        position: relative
+        text-align: center
+        .title
+            max-width: 570px
+            color: rgba(255, 255, 255, 1)
+            margin: 0 30px 70px 30px
+            .title-head
+                font-size: 14px
+                line-height: 20px
+                letter-spacing: 2px
+                text-transform: uppercase
+                color: #C0C0C0
+            h1
+                font-size: 54px
+                line-height: 60px
+                font-weight: 400
+                color: #FFFFFF
+                padding-bottom: 18px
+            .title-content
+                @extend %font_line
+                text-align: center
+                color: #C0C0C0
+        .title-icon__item
+            @extend %photo_icon
+            li:nth-child(1)
+                @extend %photo_icon_li1
+            li:nth-child(2)
+                @extend %photo_icon_li2
+            li:nth-child(3)
+                @extend %photo_icon_li3
+            li:nth-child(4)
+                @extend %photo_icon_li4
+            li
+                margin-left: 16px
+    main
+        grid-area: main
+        .photo
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            background-color: #000000
+            .photo-title
+                text-align: center
+                margin: 120px 0 42px 0
+                .photo-title__head
+                    color: #FFFFFF
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 40px
+                    line-height: 42px
+                .photo-title__item
+                    font-style: normal
+                    font-weight: 400
+                    line-height: 30px
+                    text-align: center
+                    color: #C0C0C0
+            .photo-galery
+                display: grid
+                grid-template-columns: repeat(auto-fit, minmax(576px, 44.11%))
+                justify-content: center
+                grid-gap: 16px
+                margin: 0 0 100px 0
+                .photo-galery__item:nth-child(1)
+                    background-image: url('/img/product photogrphy.jpg')
+                .photo-galery__item:nth-child(2)
+                    background-image: url('/img/architecture.jpg')
+                .photo-galery__item:nth-child(3)
+                    background-image: url('/img/drone.jpg')
+                .photo-galery__item:nth-child(4)
+                    background-image: url('/img/wildlife.jpg')
+                .photo-galery__item
+                    display: grid
+                    align-content: end
+                    background-repeat: no-repeat
+                    background-size: cover
+                    background-position: 0 0
+                    height: 580px
+                    .photo-galery-item__content
+                        width: 88%
+                        padding: 0 0 30px 30px             
+                        .photo-item__title
+                            @extend %font_line
+                            letter-spacing: 2px
+                            text-transform: uppercase
+                            color: #FFFFFF
+                        .photo-item__content
+                            @extend %font_line
+                            color: #C0C0C0
+                            padding: 15px 0 15px 0
+                        .photo-button__link
+                            text-decoration: none
+                            color: #000000
+                            letter-spacing: 0.4px
+                            font-size: 15px
+                            line-height: 20px
+                            .photo__button                                      
+                                @extend %items_buttons
+                                &:hover
+                                    box-shadow: 0 0 0 2px #3A2F28, 0 0 0 4px white
+                                    transition: 0.5s
+        .content
+            display: grid
+            grid-template-columns: repeat(auto-fit, minmax(50%, 1fr))
+            background-color: #000000
+            .content-photo__mount
+                background-image: url('/img/sunset at.jpg')
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: 50%
+                grid-column: span 2
+                min-width: 100%
+                min-height: 600px
+                position: relative
+                .content-photo__mount-items                   
+                    @extend %full_screen_title_position
+                    .mount-items__title                        
+                        @extend %full_screen_title
+                        letter-spacing: 2px
+                        text-transform: uppercase
+                        color: #FFFFFF
+                    .mount-items__content                        
+                        @extend %full_screen_title
+                .mount-items__icon
+                    @extend %photo_icon
+                    li:nth-child(1)
+                        @extend %photo_icon_li1
+                    li:nth-child(2)
+                        @extend %photo_icon_li2
+                    li:nth-child(3)                        
+                        @extend %photo_icon_li3
+                    li:nth-child(4)
+                        @extend %photo_icon_li4
+                    li
+                        margin-left: 16px
+            .content-tools
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 100%
+                min-height: 540px
+                .content-tools__items
+                    width: 78%
+                    .content-tools__item-header
+                        @extend %font_line
+                        letter-spacing: 2px
+                        text-transform: uppercase
+                        color: #C0C0C0
+                        margin-bottom: 6px
+                    .content-tools__item-title
+                        font-style: normal
+                        font-weight: 400
+                        font-size: 28px
+                        line-height: 32px
+                        color: #FFFFFF
+                        margin-bottom: 14px
+                    .content-tools__item-content
+                        @extend %font_line
+                        color: #FFFFFF
+                        margin-bottom: 20px
+                    .content-tools__button-link
+                        text-decoration: none
+                        color: #000000
+                        letter-spacing: 0.4px
+                        font-size: 15px
+                        line-height: 20px
+                        .content-tools__button                                 
+                            @extend %items_buttons
+                            width: 140px
+                            &:hover
+                                box-shadow: 0 0 0 2px #3A2F28, 0 0 0 4px white
+            .content-photo__cameras
+                background-image: url('/img/camera.jpg')
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: 50%
+                min-width: 100%
+                min-height: 540px
+                position: relative
+                .content-photo__cameras-icon
+                    @extend %photo_icon
+                    li:nth-child(1)
+                        @extend %photo_icon_li1
+                    li:nth-child(2)
+                        @extend %photo_icon_li2
+                    li:nth-child(3)
+                        @extend %photo_icon_li3
+                    li:nth-child(4)
+                        @extend %photo_icon_li4
+                    li
+                        margin-left: 16px
+            .content-photo__leafs
+                background-image: url('/img/monstera.jpg')
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: 50%
+                grid-column: span 2
+                min-width: 100%
+                min-height: 600px
+                position: relative
+                .content-photo__leafs-items                   
+                    @extend %full_screen_title_position
+                    .leafs-items__title                       
+                        @extend %full_screen_title
+                        letter-spacing: 2px
+                        text-transform: uppercase
+                        color: #FFFFFF
+                    .leafs-items__content                        
+                        @extend %full_screen_title
+                .leafs-items__icon
+                    @extend %photo_icon
+                    li:nth-child(1)
+                        @extend %photo_icon_li1
+                    li:nth-child(2)
+                        @extend %photo_icon_li2
+                    li:nth-child(3)
+                        @extend %photo_icon_li3
+                    li:nth-child(4)                      
+                        @extend %photo_icon_li4
+                    li
+                        margin-left: 16px
+            .content-clients
+                display: grid
+                grid-template: 1fr/1fr
+                grid-column: span 2
+                justify-items: center
+                align-items: center
+                width: 100%
+                min-height: 500px
+                .content-clients__items
+                    display: flex
+                    flex-direction: column
+                    .content-clients__item-title                       
+                        font-style: normal
+                        font-weight: 400
+                        font-size: 40px
+                        line-height: 42px
+                        text-align: center
+                        color: #FFFFFF
+                    .content-clients__item-content                       
+                        font-style: normal
+                        font-weight: 400
+                        font-size: 24px
+                        line-height: 30px
+                        text-align: center
+                        color: #C0C0C0
+                        padding: 15px 0 80px 0
+                    .content-clients__items-icon
+                        display: flex
+                        justify-content: center
+                        flex-wrap: wrap
+                        .content-clients__icon
+                            padding: 0 54px 0 54px
+            .content-photo__star-fall
+                background-image: url('/img/star fall.jpg')
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: 50%
+                grid-column: span 2
+                min-width: 100%
+                min-height: 600px
+                position: relative
+                .content-photo__star-fall-items                    
+                    @extend %full_screen_title_position
+                    .star-fall-items__title
+                        @extend %full_screen_title
+                        letter-spacing: 2px
+                        text-transform: uppercase
+                        color: #FFFFFF
+                    .star-fall-items__content
+                        @extend %full_screen_title
+                .star-fall-items__icon
+                    @extend %photo_icon
+                    li:nth-child(1)
+                        @extend %photo_icon_li1
+                    li:nth-child(2)                        
+                        @extend %photo_icon_li2
+                    li:nth-child(3)                        
+                        @extend %photo_icon_li3
+                    li:nth-child(4)
+                        @extend %photo_icon_li4
+                    li
+                        margin-left: 16px
+            .content__help-photography
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                text-align: center
+                min-height: 350px
+                grid-column: span 2
+                .content__help-photography-title
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 40px
+                    line-height: 42px
+                    color: #FFFFFF
+                    max-width: 570px
+                    margin: 0 30px 0 30px
+                .content__help-photography-content
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 24px
+                    line-height: 30px
+                    color: #C0C0C0
+                    padding: 12px 0 15px 0
+                .content__help-photography-link
+                    text-decoration: none
+                    color: #000000
+                    letter-spacing: 0.4px
+                    font-size: 16px
+                    line-height: 20px
+                    .content__help-photography-button                      
+                        @extend %items_buttons
+                        width: 150px
+                        &:hover
+                            box-shadow: 0 0 0 2px #3A2F28, 0 0 0 4px white
+    footer
+        grid-area: footer
+        display: grid
+        justify-content: center
+        background-color: #000000
+        min-height: 600px
+        width: 100%
+        .footer-block
+            display: grid
+            justify-content: center
+            align-content: center
+            width: 88.6vw
+            min-height: 452px
+            .footer-block__logo-links
+                display: flex
+                justify-content: space-between
+                width: 88.6vw
+                flex-wrap: wrap
+                margin-bottom: 36px
+                .footer-block__logo-content
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 13px
+                    line-height: 20px
+                    color: #C0C0C0
+            .footer-block__links
+                display: flex
+                .footer-block__links-items
+                    width: 220px
+                    .footer__links-title
+                        @extend %font_line
+                        letter-spacing: 2px
+                        text-transform: uppercase
+                        color: #C0C0C0
+                        padding-bottom: 5px
+                    .footer__links-items                       
+                        list-style: none
+                        li
+                            padding: 5px 0 5px 0
+                            .footer__links
+                                @extend %font_line
+                                color: #FFFFFF
+                                text-decoration: none
+            .footer-block__newsletter
+                display: flex
+                justify-content: space-between
+                flex-wrap: wrap
+                margin: 36px 0 36px 0
+                .footer-block__newsletter-title
+                    @extend %font_line
+                    letter-spacing: 2px
+                    text-transform: uppercase
+                    color: #FFFFFF
+                    padding-bottom: 20px
+                .footer-block__newsletter-content
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 13px
+                    line-height: 20px
+                    color: #C0C0C0
+                .footer-block__newsletter-block
+                    display: flex
+                    justify-content: end
+                    align-items: center
+                    min-width: 458px
+                    height: 52px
+                    background-color: #F9FAFB
+                    border-radius: 12px
+                    .footer-block__newsletter-block-item
+                        width: 63px
+                        height: 30px
+                        background-color: #000000
+                        border-radius: 12px
+                        margin-right: 6px
+            .footer-block__footer
+                display: flex
+                justify-content: space-between
+                flex-wrap: wrap
+                margin-top: 56px
+                .footer-block__footer-content                   
+                    @extend %font_line
+                    color: #C0C0C0
+                .footer-block__footer-icon
+                    display: flex
+                    justify-content: space-between
+                    width: 112px       
